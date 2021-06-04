@@ -37,6 +37,7 @@ st.line_chart(df['Close'])
 
 data = df.filter(['Close'])
 dataset = data.values
+st.subheader("Raw Data")
 st.write(data)
 training_data_len = math.ceil(len(dataset)*0.8)
 
