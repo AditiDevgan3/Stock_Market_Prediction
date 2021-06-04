@@ -2,6 +2,7 @@ import math
 import tkinter
 import streamlit as st
 from datetime import date
+import datetime as dt
 import tensorflow as tf
 import numpy as np
 import pandas_datareader as web
@@ -13,11 +14,15 @@ import matplotlib.pyplot as plt
 import altair as alt
 plt.style.use('fivethirtyeight')
 
-df = web.DataReader('AAPL' or 'GOOG', data_source = 'yahoo', start = '2012-01-01', end = '2019-12-17')
-st.title('Stock Market Prediction App')
+start = dt.datetime(2012,1,1,0,0)
+end = dt.date.today()
 
+st.title('Stock Market Prediction App')
 stocks = ('GOOG', 'AAPL', 'MSFT', 'GME')
 selected_stock = st.selectbox('Select dataset for prediction', stocks)
+
+df = web.DataReader(selected_stock,'yahoo', start, end)
+
 
 n_years = st.slider('Years of prediction:', 1, 4)
 period = n_years * 365
