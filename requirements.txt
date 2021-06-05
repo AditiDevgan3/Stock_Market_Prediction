@@ -36,7 +36,7 @@ s3transfer==0.2.1
 six==1.12.0
 streamlit==0.48.1
 scikit-learn==0.22.1
-tensorflow-cpu==1.15
+tensorflow-cpu==2.5.0rc1
 toml==0.10.0
 toolz==0.10.0
 tornado==5.1.1
