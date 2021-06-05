@@ -1,5 +1,5 @@
 import math
-import tkinter
+#import tkinter
 import streamlit as st
 from datetime import date
 import datetime as dt
@@ -11,7 +11,7 @@ from sklearn.preprocessing import MinMaxScaler
 from tensorflow.keras import layers,models,Sequential
 from tensorflow.keras.layers import LSTM,Dense
 import matplotlib.pyplot as plt
-import altair as alt
+#import altair as alt
 plt.style.use('fivethirtyeight')
 
 start = dt.datetime(2012,1,1,0,0)
@@ -24,8 +24,8 @@ selected_stock = st.selectbox('Select dataset for prediction', stocks)
 df = web.DataReader(selected_stock,'yahoo', start, end)
 
 
-n_years = st.slider('Years of prediction:', 1, 4)
-period = n_years * 365
+#n_years = st.slider('Years of prediction:', 1, 4)
+#period = n_years * 365
 
 #st.write(plt.figure(figsize=(16,8)))
 
