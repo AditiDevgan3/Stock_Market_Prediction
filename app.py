@@ -19,7 +19,14 @@ st.title('Stock Market Prediction App')
 stocks = ('GOOG', 'AAPL', 'MSFT', 'GME')
 selected_stock = st.selectbox('Select dataset for prediction', stocks)
 
-df = web.DataReader(selected_stock,'yahoo', start, end)
+from pandas_datareader import data as pdr
+import yfinance as yf
+
+yf.pdr_override()
+
+df = pdr.get_data_yahoo("SPY", start, end)
+
+#df = web.DataReader(selected_stock,'yahoo', start, end)
 
 st.subheader('Stock(close)')
 st.line_chart(df['Close'])
