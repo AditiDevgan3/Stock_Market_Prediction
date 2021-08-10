@@ -26,8 +26,6 @@ yf.pdr_override()
 
 df = pdr.get_data_yahoo("SPY", start, end)
 
-#df = web.DataReader(selected_stock,'yahoo', start, end)
-
 st.subheader('Stock(close)')
 st.line_chart(df['Close'])
 
